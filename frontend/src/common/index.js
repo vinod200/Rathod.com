@@ -1,6 +1,6 @@
 const backendDomin = "http://localhost:8080"
 
-const SummaryApi = {
+const SummaryApi = {    
     signUP : {
         url : `${backendDomin}/api/signup`,
         method : "post"
@@ -76,7 +76,20 @@ const SummaryApi = {
     filterProduct : {
         url : `${backendDomin}/api/filter-product`,
         method : 'post'
+    },
+    payment :{
+        url : `${backendDomin}/api/checkout`,
+        method : 'post'
+    },
+    getOrder : {
+        url : `${backendDomin}/api/order-list`,
+        method : 'get'
+    },
+    allOrder : {
+        url : `${backendDomin}/api/all-order`,
+        method : 'get'
     }
+
 }
 
 

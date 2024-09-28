@@ -87,6 +87,7 @@ const Header = () => {
                     )
                   }
                   
+ 
                   
                   {
                     menuDisplay && (
@@ -94,9 +95,17 @@ const Header = () => {
                         <nav>
                           {
                             user?.role === ROLE.ADMIN && (
-                              <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>
+                              <Link to={"/admin-panel/all-products"} className='whitespace-nowrap  hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>
                             )
                           }
+
+                           <Link to={"/order" }className='whitespace-nowrap  hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Order </Link>
+
+                           {/* New Review Section Link */}
+                          <Link to={"/review"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={() => setMenuDisplay(prev => !prev)}>Review</Link>
+
+
+
                          
                         </nav>
                       </div>

@@ -22,6 +22,11 @@ const updateAddToCartProduct = require('../controller/user/updateAddToCartProduc
 const deleteAddToCartProduct = require('../controller/user/deleteAddToCartProduct')
 const searchProduct = require('../controller/product/searchProduct')
 const filterProductController = require('../controller/product/filterProduct')
+const paymentController = require('../controller/order/paymentController')
+const webhooks = require('../controller/order/webhook')
+const orderController = require('../controller/order/order.controller')
+const allOrderController = require('../controller/order/allOrder.controller')
+// const reviewController = require('../controller/reviewController');  // Import review controller
 
 
 
@@ -51,10 +56,15 @@ router.get("/view-card-product",authToken,addToCartViewProduct)
 router.post("/update-cart-product",authToken,updateAddToCartProduct)
 router.post("/delete-cart-product",authToken,deleteAddToCartProduct)
 
+// payment and order 
+
+router.post('/checkout',authToken,paymentController)
+router.post('/webhook',webhooks)
+router.get("/order-list", authToken,orderController)
+router.get("/all-order",authToken,allOrderController)
 
 
-
-
+// router.post('/submit-review', authToken, reviewController.submitReview);
 
 
 module.exports = router
